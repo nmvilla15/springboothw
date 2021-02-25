@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Subscriber List</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Welcome to Our Awesome Site!</h1>
+
+	<ul>
+		<li><a href="/rocky">Meet our Mascot</a></li>
+		<li><a href="/about">About</a></li>
+	</ul>
+
+	<p>Interested in useful Spring Boot tips and tricks? Well I can't
+		help you, but sign up for our newsletter anyway.</p>
+	<img th:src=@{subscribe.now.jpg} alt="subscribe now sign" width="375"
+		height="275" />
+
+
+	<p>Please use the form below to sign up for our newsletter:</p>
+	<form action="#" th:action="@{/}" th:object="${subscriber}"
+		method="post">
+		<table>
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" th:field="*{firstName}" /></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+			</tr>
+			<tr>
+				<td>Email Address:</td>
+				<td><input type="text" th:field="*{emailAddress}" /></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Submit</button></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
